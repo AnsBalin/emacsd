@@ -94,6 +94,12 @@
 (load "all-the-icons-dired.el")
 (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
 
+(setq default-directory "~/")
+
+(set-face-attribute 'default nil
+                    :family "JetBrains Mono"
+                    :height 100  ;; Size in 1/10pt, so 110 is 11pt
+                    :weight 'normal)
 
 ;; mac specific
 (setq ns-right-alternative-modifier 'none) ;; make it so i can type # with right-option
