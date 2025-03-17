@@ -70,7 +70,6 @@
 (setq org-hide-leading-stars t)
 (setq org-hide-emphasis-markers t)
 (setq org-agenda-files '("~/Dropbox/orgs/emacs.org" "~/Dropbox/orgs/daily.org"))
-(org-indent-mode)
 (require 'org)
 (require 'evil-org)
 (add-hook 'org-mode-hook 'evil-org-mode)
