@@ -22,6 +22,12 @@
 (unless (package-installed-p 'all-the-icons)
   (package-refresh-contents)
   (package-install 'all-the-icons))
+(unless (package-installed-p 'ef-themes)
+  (package-refresh-contents)
+  (package-install 'ef-themes))
+(unless (package-installed-p 'catppuccin-theme)
+  (package-refresh-contents)
+  (package-install 'catppuccin-theme))
 
 ;; Completion narrowing
 (unless (package-installed-p 'vertico)
@@ -46,6 +52,7 @@
 (setq evil-want-C-d-scroll t)
 (setq evil-want-integration t)
 (setq evil-want-keybinding nil)
+(setq evil-want-C-i-jump nil)
 ;; Enable Evil
 (require 'evil)
 
@@ -59,14 +66,16 @@
 
 ;; org mode
 (transient-mark-mode 1)
+(setq org-src-preserve-indentation t)
+(setq org-hide-leading-stars t)
+(setq org-hide-emphasis-markers t)
+(setq org-agenda-files '("~/Dropbox/orgs/emacs.org" "~/Dropbox/orgs/daily.org"))
+(org-indent-mode)
 (require 'org)
 (require 'evil-org)
 (add-hook 'org-mode-hook 'evil-org-mode)
 (evil-org-set-key-theme '(navigation insert textobjects additional calendar))
 
-(unless (package-installed-p 'catppuccin-theme)
-  (package-refresh-contents)
-  (package-install 'catppuccin-theme))
 (load-theme 'catppuccin :no-confirm)
 
 (menu-bar-mode -1)
@@ -97,8 +106,8 @@
 (setq default-directory "~/")
 
 (set-face-attribute 'default nil
-                    :family "JetBrains Mono"
-                    :height 100  ;; Size in 1/10pt, so 110 is 11pt
+                    :family "Iosevka NFP"
+                    :height 120  ;; Size in 1/10pt, so 110 is 11pt
                     :weight 'normal)
 
 ;; mac specific
