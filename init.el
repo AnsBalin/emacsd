@@ -75,7 +75,16 @@
 (add-hook 'org-mode-hook 'evil-org-mode)
 (evil-org-set-key-theme '(navigation insert textobjects additional calendar))
 
-(load-theme 'catppuccin :no-confirm)
+;;(load-theme 'catppuccin :no-confirm)
+(require 'ef-themes)
+(setq ef-themes-headings
+	(quote ((1 light regular 1.5)
+		(2 regular 1.3)
+		(3 regular 1.1)
+		(agenda-date 1.3)
+		(agenda-structure regular light 1.8)
+		(t regular))))
+(ef-themes-select 'ef-day)
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
@@ -109,5 +118,10 @@
                     :height 120  ;; Size in 1/10pt, so 110 is 11pt
                     :weight 'normal)
 
+(set-face-attribute 'variable-pitch nil
+		    :family "ETBembo"
+		    :height 140)
+
 ;; mac specific
 (setq ns-right-alternative-modifier 'none) ;; make it so i can type # with right-option
+
